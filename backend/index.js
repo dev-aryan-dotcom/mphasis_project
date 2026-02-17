@@ -14,6 +14,8 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use('/api/auth', require('./routes/authRoutes'))    
 
+app.use('/api/products', require('./routes/productRoutes'))
+
 app.get('/', (req,res) => {
     res.send('Welcome to homepage')
 })
