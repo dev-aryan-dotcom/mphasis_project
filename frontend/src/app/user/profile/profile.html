@@ -1,0 +1,15 @@
+<mat-card>
+  <h2>My Profile</h2>
+
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Name" [(ngModel)]="user.name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Email" [(ngModel)]="user.email">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="update()">
+    Update Profile
+  </button>
+</mat-card>

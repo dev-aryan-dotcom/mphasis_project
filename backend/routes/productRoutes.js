@@ -8,9 +8,16 @@ router.get('/', async(req,res) => {
 });
 
 //add
-router.post('/', auth, adminOnly, async(req,res) => {
-    res.json(await Product.create(req.body));
+// ADD product (any logged in user)
+router.post('/', auth, async (req, res) => {
+  try {
+    const product = await Product.create(req.body);
+    res.status(201).json(product);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 });
+
 
 //update
 router.put('/:id', auth, adminOnly, async(req,res) => {

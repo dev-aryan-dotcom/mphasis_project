@@ -1,0 +1,30 @@
+.container{
+    height:100%;
+    width:100%;
+}
+
+.addItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    padding:20px;
+    width:90vw;
+}
+
+.productList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    padding:20px;
+    width:90vw;
+}
+.productHeading{
+    padding:20px;
+    width:90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+}

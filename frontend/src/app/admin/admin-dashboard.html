@@ -1,0 +1,43 @@
+
+<h2 style="text-align: center;">Admin Dashboard</h2>
+<div class="addItems">
+<input placeholder="Product Name" [(ngModel)]="name">
+<input type="number" placeholder="Product Price" [(ngModel)]="price">
+<input placeholder="ProductDescription" [(ngModel)]="description">
+<input placeholder="Image Url" [(ngModel)]="image">
+<button type="button" mat-raised-button color="primary" (click)="add()">Add</button>
+<button type="button" mat-raised-button color="primary" (click)="load()">Show Products</button>
+</div>
+<hr>
+
+<div class="container">
+  <table  width="100%">
+    
+    <thead>
+      <tr class="productHeading">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="productList" *ngFor="let p of products">
+        <td>{{ p.name }}</td>
+        <td>{{ p.description }}</td>
+        <td>₹ {{ p.price }}</td>
+        <td>
+          <img [src]="p.image" alt="{{ p.name }}" width="100">
+        </td>
+        <td>
+          <button type="button" mat-button color="warn" (click)="delete(p._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

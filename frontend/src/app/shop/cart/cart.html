@@ -1,0 +1,22 @@
+<h2>My Cart</h2>
+
+<div *ngFor="let item of cart">
+  <mat-card style="margin-bottom:10px">
+    <h3>{{item.product.name}}</h3>
+    <p>₹ {{item.product.price}}</p>
+
+    <button mat-button color="warn" (click)="remove(item.product._id)">
+      Remove
+    </button>
+  </mat-card>
+</div>
+
+<h3 *ngIf="cart.length">Total: ₹ {{total}}</h3>
+
+<button
+  *ngIf="cart.length"
+  mat-raised-button
+  color="primary"
+  (click)="checkout()">
+  Checkout
+</button>

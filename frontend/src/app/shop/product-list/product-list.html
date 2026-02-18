@@ -1,0 +1,9 @@
+<div style="display:flex; gap:20px; flex-wrap:wrap">
+  <mat-card *ngFor="let p of products" style="width:250px">
+    <h3>{{p.name}}</h3>
+    <p>{{p.description}}</p>
+    <h4>₹ {{p.price}}</h4>
+    <h4>{{p.image}}</h4>
+    <button mat-raised-button color="primary">Add to Cart</button>
+  </mat-card>
+</div>
